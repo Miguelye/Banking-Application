@@ -1,27 +1,23 @@
 #include <iostream>
-#include "Account.h"
 #include "Savings.h"
 #include "Checking.h"
+#include "Transaction.h"
 
 using namespace std::string_literals;
 using namespace std;
 
 int main()
 {
-	string name = "Miguel"s;
-	Checking acc1(name, 350.0f);
+	string name1 = "Miguel"s;
+	string name2 = "Andres"s;
 
-	cout << "Account Name is: " << acc1.GetName() << endl;
-	cout << "Account Balance is: " << acc1.GetBalance() << endl;
-	cout << "Account Number is: " << acc1.GetAccountNumber() << endl;
+	Checking acc1(name1, 350.0f, 50);
+	Savings  acc2(name2, 400.0f, 0.5f);
 
-	acc1.Deposit(500.0f);
-	
-	cout << "Account Balance is: " << acc1.GetBalance() << endl;
+	Transact(&acc1);
 
-	acc1.Withdraw(800.0f);
+	std::cout << std::endl;
 
-	cout << "Account Balance is: " << acc1.GetBalance() << endl;
+	Transact(&acc2);
 
-	acc1.Withdraw(0.1f);
 }

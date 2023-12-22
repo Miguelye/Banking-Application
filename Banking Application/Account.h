@@ -7,7 +7,7 @@ class Account
 public:
 	Account(const std::string &name);
 	Account(const std::string &name, float balance);
-	~Account();
+	virtual ~Account(); //Base class should always have a virtual destructor.
 
 	const std::string GetName() const;
 	float GetBalance() const;
